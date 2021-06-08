@@ -1,0 +1,46 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="FA"/>
+	<test name="FA_CRM_TEST1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentSuspendResumeTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMPublishProgramTest"/>
+		</classes>
+	</test>
+	<test name="FA_CRM_TEST2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeApproveNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeDelegateNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeDismissApprovedNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeReAssignNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeRejectNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeRequestMoreInfoNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeSaveNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeSuspendResumeNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeWithdrawApprovedNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeWithdrawNotification"/>
+		</classes>
+	</test>
+	<test name="FA_CRM_TEST3" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContracts"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsApprove"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsDelegate"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsReAssign"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsReject"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsStopApproval"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateNewOpportuinity"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMSalesTerritoryManagement"/>
+			<!--<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMSalesQuotaManagement"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMIncentiveCompensation"/>
+			-->
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMBug27034180ContractsAttachmentsTest"/>
+		</classes>
+	</test>
+
+</suite>

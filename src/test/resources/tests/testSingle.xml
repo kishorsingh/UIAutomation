@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FA Test" verbose="1">
+	
+  <test name="FA_Test_Expense_Report">
+  	<classes>
+		<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceApproveTest"/>
+	</classes>
+  </test>
+</suite>

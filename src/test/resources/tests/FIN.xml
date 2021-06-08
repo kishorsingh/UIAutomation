@@ -1,0 +1,39 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="FA"/>
+	<test name="FA_FIN_TEST1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesAdhocRouteTest"/>
+		</classes>
+	</test>
+    <test name="FA_FIN_TEST2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceReSubmitTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINAdhocPaymentAutoApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceSuspendResumeTest"/>
+		</classes>
+	</test>
+	<test name="FA_FIN_TEST3" parallel="false" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceWithdrawByAnyUser"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceForceApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceAutoApprovalTest"/>
+		</classes>
+	</test>
+</suite>

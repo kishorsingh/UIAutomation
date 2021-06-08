@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="FA"/>
+	<test name="FA_BPM_TEST1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26186285SwitchView"/>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26374548PasswordPrompt"/>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26679675BPMErrorAssigneesThrowsException"/>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug27123159TaskConfigParticipantsTest"/>
+		</classes>
+	</test>
+    <test name="FA_BPM_TEST2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26428834TranslationInWorklist"/>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26493338TranslationInParticipantDiagram"/>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26438182MissingIcons"/>
+		</classes>
+	</test>
+	<test name="FA_BPM_TEST3" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26976153DoubleByteCharacterComment"/>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug27241158BPMArchivalAssigneeData"/>
+			<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug27986668AuditReportsRetrieveSoaChanges"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINBug27948632TaskEscalationAfterAbortingInstance"/>
+		</classes>
+	</test>
+</suite>

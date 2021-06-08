@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="local"/>
+     	<test name="FA_FIN_TEST1" parallel="none" preserve-order="true">
+  			<classes>
+				<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug27890333Test"/>
+				<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug26752292Test"/>
+				<class name="com.oracle.fa.qa.selenium.component.bpm.test.EmailNotificationsTest"/>
+				<class name="com.oracle.fa.qa.selenium.component.bpm.test.Bug28406206EmailNotificationsTests"/>
+			</classes>
+  		</test>
+</suite>

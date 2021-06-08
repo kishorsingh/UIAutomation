@@ -1,0 +1,142 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="12">
+	<parameter name="environment" value="FA"/>
+	<test name="FA_FIN_TEST1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINExpensesAdhocRouteTest"/>
+		</classes>
+	</test>
+	<test name="FA_FIN_TEST2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceReSubmitTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINAdhocPaymentAutoApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINCashAdvanceSuspendResumeTest"/>
+		</classes>
+	</test>
+	<test name="FA_FIN_TEST3" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceWithdrawByAnyUser"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceAutoApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.fin.test.FINInvoiceForceApprovalTest"/>
+		</classes>
+	</test>
+
+	<test name="FA_Test_HCM1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMTerminateEmpBypassApprovalTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMTerminateEmployeeTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug21886115TerminateInactive"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug25801488ReAssignHireEmployeeTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMHireEmployeeTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMRejectEmployeeHireTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMRejectHireFromWorklistTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMEmployeeHirePushBackAdhocRouteTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMRequestMoreInfoTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMEmployeeHireSuspendWithdrawTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMDelegateReassignTest"/>
+		</classes>
+	</test>
+	<test name="FA_Test_HCM2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMNonWorkerDelegateTest"/>
+		</classes>
+	</test>
+	<test name="FA_Test_HCM3" parallel="none" preserve-order="true">
+		<classes>
+			<!-- <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMChangeMaritalStatusTest"/> -->
+			<class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMEmployeePromotionTest"/>
+		</classes>
+	</test>
+
+	<test name="FA_Test_PRC1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOCancelTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOReassignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPODelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPORejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPORequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOSuspendResumeTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCBug26713204OrderRejectedInPreApprovalFYITest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCBug27561133TriggerRuleAfterDelegate"/>
+		</classes>
+	</test>
+	<test name="FA_Test_PRC2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionConfigTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionManageApprovalsTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionCancelTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionReassignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCBug24906841SharedViewInHA"/>
+		</classes>
+	</test>
+	<test name="FA_Test_PRC3" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionLenovoApproveNotificationTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionRejectLenovoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCApprovalRulesCostCenterAttributeTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionUserDefinedCategoryAttributeApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionUserDefinedCategoryAttributeAutoApprovalTest"/>
+		</classes>
+	</test>
+
+	<test name="FA_CRM_TEST1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentReAssignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnrollmentSuspendResumeTest"/>
+			<!--<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMPublishProgramTest"/>-->
+		</classes>
+	</test>
+	<test name="FA_CRM_TEST2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeApproveNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeDelegateNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeDismissApprovedNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeReAssignNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeRejectNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeRequestMoreInfoNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeSaveNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeSuspendResumeNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeWithdrawApprovedNotification"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateDisputeWithdrawNotification"/>
+		</classes>
+	</test>
+	<test name="FA_CRM_TEST3" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContracts"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsApprove"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsDelegate"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsReAssign"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsReject"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMEnterpriseContractsStopApproval"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateNewOpportuinity"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMSalesTerritoryManagement"/>
+			<!--<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMSalesQuotaManagement"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMIncentiveCompensation"/>-->
+		</classes>
+	</test>
+
+</suite>

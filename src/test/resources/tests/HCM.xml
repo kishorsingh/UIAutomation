@@ -1,0 +1,35 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="FA"/>
+    <test name="FA_Test_HCM1" parallel="none" preserve-order="true">
+        <classes>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMTerminateEmpBypassApprovalTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMTerminateEmployeeTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug21886115TerminateInactive"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug25801488ReAssignHireEmployeeTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMHireEmployeeTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMRejectEmployeeHireTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMRejectHireFromWorklistTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMEmployeeHirePushBackAdhocRouteTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMRequestMoreInfoTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMEmployeeHireSuspendWithdrawTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMDelegateReassignTest"/>
+		    <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug27969763FYIAutoDismiss"/>
+        </classes>
+    </test>
+    <test name="FA_Test_HCM2" parallel="none" preserve-order="true">
+        <classes>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMNonWorkerDelegateTest"/>
+           <!-- <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug27568308ChangeMgrWithdraw"/>-->
+		    <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug28390711AbsenceApproval"/>
+        </classes>
+    </test>
+    <test name="FA_Test_HCM3" parallel="none" preserve-order="true">
+        <classes>
+            <!-- <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMChangeMaritalStatusTest"/> -->
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMEmployeePromotionTest"/>
+            <class name="com.oracle.fa.qa.selenium.component.hcm.test.HCMBug27469012GoalHistoryRegionIssue"/>
+        </classes>
+    </test>
+</suite>

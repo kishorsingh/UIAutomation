@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="FA"/>
+	<test name="FA_Test_PRC1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOCancelTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOReassignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPODelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPORejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPORequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCPOSuspendResumeTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCBug26713204OrderRejectedInPreApprovalFYITest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCBug27561133TriggerRuleAfterDelegate"/>
+		</classes>
+	</test>
+	<test name="FA_Test_PRC2" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionConfigTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionManageApprovalsTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionApproveTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionCancelTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionRejectTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionReassignTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionDelegateTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionRequestInfoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCBug24906841SharedViewInHA"/>
+		</classes>
+	</test>
+	<test name="FA_Test_PRC3" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionLenovoApproveNotificationTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionRejectLenovoTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCApprovalRulesCostCenterAttributeTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionUserDefinedCategoryAttributeApprovalTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.prc.test.PRCRequisitionUserDefinedCategoryAttributeAutoApprovalTest"/>
+		</classes>
+	</test>
+</suite>

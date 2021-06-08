@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="FA"/>
+	<test name="FA_CustomUI1" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreatePartnerCustomUI"/>
+		</classes>
+	</test>
+	<test name="FA_CustomUI" parallel="none" preserve-order="true">
+		<classes>
+
+		</classes>
+	</test>
+	<test name="FA_CustomUI2" parallel="none" preserve-order="true">
+		<classes>
+		<!--	<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMCreateNewOpportuinity"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMSalesTerritoryManagement"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMSalesQuotaManagement"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMIncentiveCompensation"/>
+			<class name="com.oracle.fa.qa.selenium.component.crm.test.CRMBug27034180ContractsAttachmentsTest"/>
+		--></classes>
+	</test>
+
+</suite>

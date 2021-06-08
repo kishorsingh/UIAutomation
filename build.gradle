@@ -1,0 +1,126 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+group = 'com.oracle.mcs.qa.common'
+version = project.publish_version
+
+description = "FA selenium test"
+
+sourceCompatibility = '1.8'
+
+repositories {
+    maven {
+        url 'https://artifactory-slc.oraclecorp.com/artifactory/mobile-mobileqa-release-local'
+    }
+    maven {
+        url 'http://artifactory-slc.oraclecorp.com/artifactory/fmw-virtual'
+    }
+    mavenCentral()
+    maven {
+        url 'http://repo.jenkins-ci.org/releases'
+    }
+    flatDir {
+        dirs '../selenium-framework/lib'
+    }
+    maven {
+        url "https://www.oracle.com/content/secure/maven/content"
+        credentials {
+            username = project.findProperty('oracle.emailid')
+            password = project.findProperty('oracle.password')
+        }
+
+    }
+}
+
+dependencies {
+    testCompile 'log4j:log4j:1.2.17'
+    testCompile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.10.0'
+    testCompile group: 'cglib', name: 'cglib-nodep', version: '2.2'
+    //Testng
+    testCompile 'org.testng:testng:6.10'
+    testCompile 'com.oracle.mcs.qa.common:selenium-framework:0.11'
+    testCompile 'com.oracle.jdbc:ojdbc8:12.2.0.1'
+    testCompile 'com.jcraft:jsch:0.1.54'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+task runTests(type: Test) {
+    def failed = project.hasProperty("failed")
+    testLogging.showStandardStreams = true
+    useTestNG() {
+        //include Groups
+        if(project.hasProperty("includegroups")){
+            if (project.findProperty('includegroups') != ""){
+                String incgroups = project.findProperty('includegroups')
+                includeGroups incgroups.toLowerCase()
+            }
+        }
+
+        // exclude Groups
+        if(project.hasProperty("excludegroups")){
+            if (project.findProperty('excludegroups') != ""){
+                String excgroups = project.findProperty('excludegroups')
+                excludeGroups excgroups.toLowerCase()
+            }
+        }
+        if (project.hasProperty("suite") && !project.hasProperty("testCases")) {
+            if ("$suite" == "HCM") {
+                suites file(project.testsuiteHCM)
+            }
+            if ("$suite" == "FIN") {
+                suites file(project.testsuiteFIN)
+            }
+            if ("$suite" == "CRM") {
+                suites file(project.testsuiteCRM)
+            }
+            if ("$suite" == "CustomUI") {
+                suites file(project.testsuiteCustomUI)
+            }
+            if ("$suite" == "ESS") {
+                suites file(project.testsuiteESS)
+            }
+            if ("$suite" == "PRC") {
+                suites file(project.testsuitePRC)
+            }
+            if ("$suite" == "BPM-FA") {
+                suites file(project.testsuiteBPMFA)
+            }
+            if ("$suite" == "BPM-Local") {
+                suites file(project.testsuiteBPMLocal)
+            }
+            if ("$suite" == "AllSuites") {
+                suites file(project.testsuite)
+            }
+        }
+        if (project.hasProperty("testCases")) {
+            doFirst {
+                buildIndividualSuite.execute()
+            }
+            suites file(project.testIndividualCase)
+        }
+
+        if (failed) {
+            doFirst {
+                buildReRunSuite.execute()
+            }
+            suites file(project.testsuiteReRun)
+        }
+    }
+}
+
+
+task buildReRunSuite(dependsOn: classes, type: JavaExec) {
+    main = 'com.oracle.fa.qa.selenium.component.util.BuildRerunFailedSuite'
+    classpath = sourceSets.test.runtimeClasspath
+}
+
+task buildIndividualSuite(dependsOn: classes, type: JavaExec) {
+    main = 'com.oracle.fa.qa.selenium.component.util.BuildIndividualRunSuite'
+    classpath = sourceSets.test.runtimeClasspath
+    if(project.hasProperty("testCases"))
+        args project.getProperty('testCases')
+}

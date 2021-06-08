@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="FA Test" verbose="1" parallel="tests" thread-count="3">
+	<parameter name="environment" value="FA"/>
+	<test name="FA_ESS_TEST" parallel="none" preserve-order="true">
+		<classes>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.ExecuteJavaJobTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.CancelProcessTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.PutOnHoldTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.ExecuteBIPJobTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.SearchCriteriaTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.ReSubmitTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.ExecutePLSQLJobTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.ReleaseProcessesTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.ViewLogsTest"/>
+			<class name="com.oracle.fa.qa.selenium.component.ess.test.ExecuteJobsWithSchedulesTest"/>
+		</classes>
+	</test>
+</suite>
